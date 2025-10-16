@@ -2,6 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
+import GlobalStyles from './components/GlobalStyles/GlobalStyles.tsx'
 // import { createBrowserRouter } from 'react-router-dom';
 // import { BrowserRouter } from 'react-router-dom';
 
@@ -13,6 +14,8 @@ import App from './App.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
+    <GlobalStyles>
+      <App />
+    </GlobalStyles>
   </StrictMode>,
 )

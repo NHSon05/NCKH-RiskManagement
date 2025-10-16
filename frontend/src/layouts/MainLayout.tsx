@@ -1,7 +1,14 @@
+import { Outlet } from "react-router-dom";
+import NavBar from "../components/layout/NavBar/NavBar";
+import './MainLayout.module.scss'
+
 function MainLayout() {
     return (  
         <div>
-            <h1>Layout khi đã đăng nhập</h1>
+            <NavBar/>
+            <div className="flex justify-center w-[100%] h-[80vh] ">
+                <Outlet/>
+            </div>
         </div>
     );
 }

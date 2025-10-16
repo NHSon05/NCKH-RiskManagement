@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 
 const NavBar: React.FC = () => {
 
-    const currentUser = false;
+    const currentUser = true;
 
     return (  
         <header className="flex justify-between items-center">

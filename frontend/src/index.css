@@ -10,6 +10,4 @@ a{
 
 /* Tailwind directives - required for Tailwind to inject its base/components/utilities
    This file is imported by `main.tsx`, so Vite + @tailwindcss/vite will process it. */
-@tailwind base;
-@tailwind components;
 @tailwind utilities;

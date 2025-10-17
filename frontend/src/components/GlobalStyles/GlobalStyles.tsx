@@ -1,5 +1,5 @@
 import type React from 'react';
-import './GlobalStyles.module.scss';
+import './GlobalStyles.module.css';
 
 // Define DataType for props by interfaces
 interface GlobalStylesProps {

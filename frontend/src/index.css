@@ -1,13 +1,2 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-a{
-    text-decoration: none;
-    color: inherit;
-}
-
-/* Tailwind directives - required for Tailwind to inject its base/components/utilities
-   This file is imported by `main.tsx`, so Vite + @tailwindcss/vite will process it. */
+@import "tailwindcss";
 @tailwind utilities;

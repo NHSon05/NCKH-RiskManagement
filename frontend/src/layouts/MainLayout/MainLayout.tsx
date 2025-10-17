@@ -1,6 +1,5 @@
 import { Outlet } from "react-router-dom";
 import NavBar from "../../components/layout/NavBar/NavBar";
-import './MainLayout.module.scss'
 // import './MainLayout.css'
 
 function MainLayout() {

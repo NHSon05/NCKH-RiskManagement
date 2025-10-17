@@ -1,8 +1,9 @@
 import React from "react";
 import logo from '../../../assets/imgs/logo.svg';
-// import './NavBar.module.css';
 import { NavLink } from "react-router-dom";
-// import Button from "../../common/Button";
+import Button from "../../common/Button";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 // import './NavBar.css'
 
 interface Links{
@@ -19,31 +20,37 @@ const NavBar: React.FC = () => {
         { label: "Báo cáo", to: "/reports" },
         { label: "Hỗ trợ", to: "/support" },
     ];
-    return (  
-        <header className="flex justify-between items-center w-full">
-            <img src={logo} alt="Logo"/>
-            <ul>
-                {links.map((link)=>(
-                    <li key={link.to} className="inline-flex hover:text-gray-500 cursor-pointer 
-                                                mx-[10px] my-0">
-                        <NavLink to={link.to}>{link.label}</NavLink>
-                    </li>
-                ))} 
-            </ul>
-            <div>
-                {currentUser ? (
-                    <div className="flex gap-2">
-                        <button className="bg-[var(--economy)] p-20">Thêm dự án</button>
-                        <button className="bg-[var(--economy)] p-20">Đăng xuất</button>
+    return (
+        <div className="w-full border-b border-[var(--border)] bg-[var(--white)] fixed">
+            <nav className="flex justify-between items-center px-2 sm:px-12">
+                <img src={logo} alt="Logo" className="h-12"/>
+                <div className="flex items-center py-2 gap-2">
+                    <ul className="hidden md:block">
+                        {links.map((link)=>(
+                            <li key={link.to} className="inline-flex hover:text-gray-500 cursor-pointer mx-[10px] my-0">
+                                <NavLink to={link.to}><span>{link.label}</span></NavLink>
+                            </li>
+                        ))} 
+                    </ul>
+                    <div className=" sm:block">
+                        {currentUser ? (
+                            <div className="flex gap-2">
+                                <Button variant="primary" title="Thêm dự án"/>
+                                <Button variant="red" title="Đăng xuất"/>
+                            </div>
+                        ) : (
+                            <div className="flex gap-2">
+                                <Button variant="primary" title="Đăng khập"/>
+                                <Button variant="secondary" title="Đăng ký"/>
+                            </div>
+                        )}
                     </div>
-                ) : (
-                    <>
-                        <button>Đăng ký</button>
-                        <button>Đăng nhập</button>
-                    </>
-                )}
-            </div>
-        </header>
+                    <div className="sm:hidden">
+                        <FontAwesomeIcon icon={faBars} className="hidden"/>
+                    </div>
+                </div>
+            </nav>
+        </div>  
     );
 }
 

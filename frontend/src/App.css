@@ -1,5 +1,8 @@
 /* @import "tailwindcss";
 @tailwind utilities; */
+a.active{
+    font-weight: bold;
+}
 :root{
     --background: #FAFAFB;
     --white: #ffffff;

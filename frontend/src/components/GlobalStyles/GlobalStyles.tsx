@@ -8,7 +8,7 @@ interface GlobalStylesProps {
 
 const GlobalStyles = ({children}: GlobalStylesProps) => {
     return <div className='bg-[var(--background)]'>
-        {children};
+        {children}
     </div>
 };
 export default GlobalStyles

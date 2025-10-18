@@ -7,6 +7,12 @@ import ProjectPage from './pages/Project/ProjectPage'
 import Report from './pages/Report/Report'
 import Support from './pages/Support/Support'
 import LandingPage from './pages/Landing/LandingPage'
+import ProjectLayout from './layouts/ProjectsLayout'
+import Info from './pages/Project/steps/Info'
+import Pestel from './pages/Project/steps/Pestel'
+import Target from './pages/Project/steps/Target'
+import Identify from './pages/Project/steps/Identify'
+import Evaluation from './pages/Project/steps/Evaluation'
 
 function App() {
   const router = createBrowserRouter(
@@ -14,7 +20,14 @@ function App() {
       <Route path='/' element={<MainLayout/>}>
         <Route index element={<HomePage/>}/>
         <Route path='landingpage' element={<LandingPage/>}/>
-        <Route path='projects' element={<ProjectPage/>}/>
+        <Route path='projects' element={<ProjectLayout/>}>
+          <Route index element={<ProjectPage/>}/>
+          <Route path='info' element={<Info/>}/>
+          <Route path='pestel' element={<Pestel/>}/>
+          <Route path='target' element={<Target/>}/>
+          <Route path='identify' element={<Identify/>}/>
+          <Route path='evaluation' element={<Evaluation/>}/>
+        </Route>
         <Route path='reports' element={<Report/>}/>
         <Route path='support' element={<Support/>}/>
       </Route>

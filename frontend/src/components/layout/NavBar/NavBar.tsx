@@ -1,6 +1,6 @@
 import React from "react";
 import logo from '../../../assets/imgs/logo.svg';
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Button from "../../common/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
@@ -13,6 +13,7 @@ interface Links{
 const NavBar: React.FC = () => {
 
     const currentUser = true;
+    const nagivate = useNavigate();
 
     const links:Links[] = [
         { label: "Trang chủ", to: "/" },
@@ -21,7 +22,7 @@ const NavBar: React.FC = () => {
         { label: "Hỗ trợ", to: "/support" },
     ];
     return (
-        <div className="w-full border-b border-[var(--border)] bg-[var(--white)] fixed">
+        <div className="w-full border-b border-[var(--border)] bg-[var(--white)] sticky">
             <nav className="flex justify-between items-center px-2 sm:px-12">
                 <img src={logo} alt="Logo" className="h-12"/>
                 <div className="flex items-center py-2 gap-2">
@@ -35,7 +36,7 @@ const NavBar: React.FC = () => {
                     <div className=" sm:block">
                         {currentUser ? (
                             <div className="flex gap-2">
-                                <Button variant="primary" title="Thêm dự án"/>
+                                <Button variant="primary" title="Thêm dự án" onClick={() => nagivate('projects/info')}/>
                                 <Button variant="red" title="Đăng xuất"/>
                             </div>
                         ) : (

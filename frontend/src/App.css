@@ -1,11 +1,51 @@
 /* @import "tailwindcss";
 @tailwind utilities; */
+@reference "tailwindcss";
+* {
+    box-sizing: border-box;
+}
+
+body {
+    --fontfamily: 'IBM Plex Sans', sans-serif;
+}
+
+/* .container{
+    margin-left: 2rem;
+    margin-right: 2rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+@media (min-width: 640px) {
+    .container{
+        margin-left: 4rem;
+        margin-right: 4rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .container{
+        margin-left: 6rem;
+        margin-right: 6rem;
+    }
+} */
+.wrapper{
+    @apply mx-8 sm:mx-16 md:mx-24;
+}
+.full{
+    @apply -mx-8 sm:-mx-16 md:-mx-24;
+}
+
 a.active{
     font-weight: bold;
 }
+
 :root{
+    --main-color : #1F75FE;
+
     --background: #FAFAFB;
     --white: #ffffff;
+    --black: #000000;
     --description : #676D7B;
     --logo:  #002F7C;
     --border: #DFE1E5;

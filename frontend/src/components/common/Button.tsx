@@ -14,7 +14,6 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
     onClick?: (event: React.MouseEvent<HTMLElement>) => void;
 }
-// Kết hợp props của chúng ta với các props gốc của HTML để có thể truyền `type`, `target`...
 // Build Component
 
 function Button({ 
@@ -43,7 +42,7 @@ function Button({
 
     const classes = classNames(
         // Button
-        'inline-flex items-center justify-center rounded-lg font-semibold',
+        'inline-flex items-center justify-center rounded-lg font-semibold cursor-pointer',
         // Size
         {
             'px-2 py-1.5 text-sm': size === 'small',

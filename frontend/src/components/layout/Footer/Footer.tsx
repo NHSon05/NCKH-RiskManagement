@@ -1,5 +1,6 @@
 import Button from "../../common/Button";
 import { FaTwitter, FaFacebookF, FaInstagram, FaGithub } from 'react-icons/fa';
+import bg_blue from '../../../assets/imgs/blue-bg.jpg';
 
 
 interface List{
@@ -13,7 +14,6 @@ interface Items{
 }
 
 function Footer() {
-
     const Items:Items[] = [
         {
             title: 'CÔNG TY',
@@ -36,7 +36,8 @@ function Footer() {
     ]
 
     return (  
-        <footer className="bg-[var(--primary-btn)] border-t border-[var(--border)] ">
+        <footer className="border-t border-[var(--border)]"
+                style={{ backgroundImage: `url(${bg_blue})` }}>
             <div className=" mx-2 sm:mx-12 py-12">
                 <div className="grid grid-cols-1 md:grid-cols-4">
                     <div className="text-center md:text-start md:col-span-1">

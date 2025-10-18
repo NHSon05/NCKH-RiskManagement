@@ -2,7 +2,7 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import './App.css'
 // import NavBar from './components/layout/NavBar'
 import HomePage from './pages/Home/Home'
-import MainLayout from './layouts/MainLayout/MainLayout'
+import MainLayout from './layouts/MainLayout'
 import ProjectPage from './pages/Project/ProjectPage'
 import Report from './pages/Report/Report'
 import Support from './pages/Support/Support'
@@ -13,13 +13,14 @@ import Pestel from './pages/Project/steps/Pestel'
 import Target from './pages/Project/steps/Target'
 import Identify from './pages/Project/steps/Identify'
 import Evaluation from './pages/Project/steps/Evaluation'
+import NotFound from './pages/NotFound/NotFound'
 
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path='/' element={<MainLayout/>}>
-        <Route index element={<HomePage/>}/>
-        <Route path='landingpage' element={<LandingPage/>}/>
+        <Route index element={<LandingPage/>}/>
+        <Route path='home' element={<HomePage/>}/>
         <Route path='projects' element={<ProjectLayout/>}>
           <Route index element={<ProjectPage/>}/>
           <Route path='info' element={<Info/>}/>
@@ -30,6 +31,7 @@ function App() {
         </Route>
         <Route path='reports' element={<Report/>}/>
         <Route path='support' element={<Support/>}/>
+        <Route path='*' element={<NotFound/>}/>
       </Route>
     )
   )

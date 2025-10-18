@@ -1,3 +1,5 @@
+// import NavBar from "../../components/layout/NavBar/NavBar";
+
 function LandingPage() {
     return (  
         <div>

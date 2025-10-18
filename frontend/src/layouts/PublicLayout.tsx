@@ -3,10 +3,10 @@ import NavBar from "../components/layout/NavBar/NavBar";
 import Footer from "../components/layout/Footer/Footer";
 // import './MainLayout.css'
 
-function MainLayout() {
+function PublicLayout() {
     return (  
         <div>
-            <NavBar isLogin={true}/>
+            <NavBar isLogin={false}/>
             <div className="wrapper text-center items-center">
                 <Outlet/>
             </div>
@@ -15,4 +15,4 @@ function MainLayout() {
     );
 }
 
-export default MainLayout;
+export default PublicLayout;

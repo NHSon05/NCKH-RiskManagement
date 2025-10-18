@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'construction-pattern': "url('../frontend/src/assets/imgs/construction.jpg')"
+      }
       // color: {
       //   'background': '#FAFAFB',
       //   'white': '#ffffff',

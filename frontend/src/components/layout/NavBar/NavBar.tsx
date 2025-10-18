@@ -31,7 +31,7 @@ function NavBar({isLogin = true}: NavBarProps){
         { label: "Hỗ trợ", to: "/support" },
     ];
     return (
-        <div className="w-full border-b border-[var(--border)] bg-[var(--white)] sticky top-0">
+        <div className="w-full border-b border-[var(--border)] bg-[var(--white)] sticky z-99 top-0">
             <nav className="flex justify-between items-center px-2 sm:px-12">
                 <Link to='/home'>
                     <img src={logo} alt="Logo" className="h-12"/>

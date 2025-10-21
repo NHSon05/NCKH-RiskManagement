@@ -8,8 +8,23 @@ import building from '../../assets/imgs/DaNang.png';
 import Button from '../../components/common/Button';
 import Image from '../../components/common/Image';
 import Title from '../../components/common/Title';
+import Card from '../../components/common/PublicComponents/Cards';
+
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagnifyingGlass, faChartBar, faStar, faFileAlt } from '@fortawesome/free-solid-svg-icons';
+// import { IconProp } from '@fortawesome/fontawesome-svg-core';
+
+
 
 function LandingPage() {
+
+    const cards:{ color: 'blue' | 'green' | 'purple' | 'orange'; icon: IconProp; title: string; des: string }[] = [
+        { color: 'blue', icon: faMagnifyingGlass, title: 'Nhận diện rủi ro', des: 'Xác định và phân tích rủi ro tiềm ẩn ảnh hưởng đến doanh nghiệp.' },
+        { color: 'green', icon: faStar, title: 'Đề xuất giải pháp ', des: 'Phát triển các chiến lược hiệu quả để giảm thiểu và quản lý rủi ro.' },
+        { color: 'purple', icon: faFileAlt, title: 'Đánh giá & phân tích', des: 'Đánh giá mức độ rủi ro và tác động tiềm tàng của chúng.' },
+        { color: 'orange', icon: faChartBar, title: 'Theo dõi & báo cáo', des: 'Liên tục giám sát và báo cáo về tình trạng rủi ro.' },
+    ];
+
     return (
         <div>
             {/* Welcome Screen */}
@@ -31,11 +46,15 @@ function LandingPage() {
             </div>
 
             {/* Advantages of Projects */}
-            <div>
+            <div className='py-16 space-y-8'>
                 <Title title='Risk Management ' variant='dark' size='large'>
                     <span className='text-[var(--main-color)]'>cung cấp</span>
                 </Title>
-                
+                <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[32px]'>
+                    {cards.map((card, index) => (
+                        <Card key={index} color={card.color} icon={card.icon} title={card.title} des={card.des}/>
+                    ))}
+                </div>
 
             </div>
 
@@ -49,7 +68,7 @@ function LandingPage() {
                             <span><br/>Tiêu chuẩn quốc tế về quản lý rủi ro</span>
                         </Title>
                         <div className='w-1/3 bg-[var(--main-color)] rounded-full h-1.5 my-4'/>
-                        <p className='text-[20px]'>ISO 31000 là tiêu chuẩn quốc tế về quản lý rủi ro, được áp dụng rộng rãi cho mọi loại hình và tổ chức và dự án.
+                        <p className='text-[16px] lg:text-[20px]'>ISO 31000 là tiêu chuẩn quốc tế về quản lý rủi ro, được áp dụng rộng rãi cho mọi loại hình và tổ chức và dự án.
                             Tiêu chuẩn này đưa ra khung và nguyên tắc giúp doanh nghiệp nhận diện, phân tích, đánh giá, và xử lý rủi ro một cách có hệ thống.
                             Nhờ đó, tổ chức có thể đưa ra quyết định tốt hơn, đảm bảo mục tiêu đạt được trong môi trường an toàn bền vững.
                         </p>

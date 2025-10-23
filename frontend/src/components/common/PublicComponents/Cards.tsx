@@ -2,6 +2,7 @@ import React from "react";
 import classNames from "classnames";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {type IconProp } from '@fortawesome/fontawesome-svg-core';
+import { motion } from "motion/react"
 
 interface ItemProps{
     title: string; 
@@ -54,7 +55,7 @@ const Card: React.FC<ItemProps> = ({
     )
 
     return(
-        <div className={boxClasses} {...props}>
+        <motion.div className={boxClasses} {...props} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.8 }}>
             <FontAwesomeIcon icon={icon} className={iconClasses} />
             <h1 className={textClasses}>
                 {title}
@@ -62,7 +63,7 @@ const Card: React.FC<ItemProps> = ({
             <p className="text-[var(--description)] text-sm mt-2">
                 {des}
             </p>
-        </div>
+        </motion.div>
     )
 }
 

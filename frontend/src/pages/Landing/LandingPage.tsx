@@ -46,7 +46,7 @@ function LandingPage() {
             </div>
 
             {/* Advantages of Projects */}
-            <div className='py-16 space-y-8'>
+            <div className='py-24 space-y-8'>
                 <Title title='Risk Management ' variant='dark' size='large'>
                     <span className='text-[var(--main-color)]'>cung cấp</span>
                 </Title>

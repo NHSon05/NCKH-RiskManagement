@@ -3,8 +3,8 @@ import classNames from "classnames";
 
 interface TitleProps{
     title: string;
-    size?: 'small' | 'medium' | 'large' | 'extra-large';
-    variant?: 'light' | 'dark' | 'navy';
+    size: 'small' | 'medium' | 'large' | 'extra-large';
+    variant: 'light' | 'dark' | 'navy';
     className?: string;
     children?: React.ReactNode;
 }

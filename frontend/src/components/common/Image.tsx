@@ -1,4 +1,5 @@
 import { forwardRef } from "react";
+// import {motion} from 'motion/react'
 
 interface ImageProps {
     src: string;
@@ -28,6 +29,12 @@ const Image = forwardRef<HTMLImageElement, ImageProps>(({
         ref={ref}
         {...props}
         // onError={handleError}
+        // whileHover={{ scale: 1.05 }} 
+        // whileTap={{ scale: 0.8 }}
+        // initial={{ opacity: 0, y: 50 }}
+        // whileInView={{ opacity: 1, y: 0 }} 
+        // viewport={{ once: true }} 
+        // transition={{ duration: 0.2}}
         />
     )
 });

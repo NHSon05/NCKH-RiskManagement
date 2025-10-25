@@ -1,6 +1,5 @@
 // import NavBar from "../../components/layout/NavBar/NavBar";
 // import intro from '../../assets/imgs/construction.jpg';
-
 import construction from '../../assets/imgs/construction.jpg';
 import iso from '../../assets/imgs/ISO.png'
 import building from '../../assets/imgs/DaNang.png';
@@ -12,6 +11,7 @@ import Card from '../../components/common/PublicComponents/Cards';
 
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faChartBar, faStar, faFileAlt } from '@fortawesome/free-solid-svg-icons';
+import {motion} from 'motion/react'
 // import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 
@@ -19,7 +19,7 @@ import { faMagnifyingGlass, faChartBar, faStar, faFileAlt } from '@fortawesome/f
 function LandingPage() {
 
     const cards:{ color: 'blue' | 'green' | 'purple' | 'orange'; icon: IconProp; title: string; des: string }[] = [
-        { color: 'blue', icon: faMagnifyingGlass, title: 'Nhận diện rủi ro', des: 'Xác định và phân tích rủi ro tiềm ẩn ảnh hưởng đến doanh nghiệp.' },
+        { color: 'blue', icon: faMagnifyingGlass, title: 'Nhận diện rủi ro', des: 'Xác định và phân tích rủi ro tiềm ẩn ảnh hưởng đến doanh nghiệp.', },
         { color: 'green', icon: faStar, title: 'Đề xuất giải pháp ', des: 'Phát triển các chiến lược hiệu quả để giảm thiểu và quản lý rủi ro.' },
         { color: 'purple', icon: faFileAlt, title: 'Đánh giá & phân tích', des: 'Đánh giá mức độ rủi ro và tác động tiềm tàng của chúng.' },
         { color: 'orange', icon: faChartBar, title: 'Theo dõi & báo cáo', des: 'Liên tục giám sát và báo cáo về tình trạng rủi ro.' },
@@ -47,9 +47,16 @@ function LandingPage() {
 
             {/* Advantages of Projects */}
             <div className='py-24 space-y-8'>
-                <Title title='Risk Management ' variant='dark' size='large'>
-                    <span className='text-[var(--main-color)]'>cung cấp</span>
-                </Title>
+                <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }} 
+                    viewport={{ once: true }} 
+                    transition={{ duration: 0.5}}
+                >
+                    <Title title='Risk Management ' variant='dark' size='large'>
+                        <span className='text-[var(--main-color)]'>cung cấp</span>
+                    </Title>
+                </motion.div>
                 <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[32px]'>
                     {cards.map((card, index) => (
                         <Card key={index} color={card.color} icon={card.icon} title={card.title} des={card.des}/>
@@ -61,8 +68,13 @@ function LandingPage() {
             {/* Infomation about iso */}
             <div className='full bg-[var(--white)] py-16'>
                 <div className='wrapper grid grid-cols-1 md:grid-cols-2'>
-                    <Image src={iso} alt='iso' className='bg-cover mx-auto'/>
-                    <div className='text-start p-8'>
+                    <Image src={iso} alt='iso' className='bg-cover mx-auto '/>
+                    <motion.div className='text-start p-8'
+                                initial={{ opacity: 0, y: 50 }}
+                                whileInView={{ opacity: 1, y: 0 }} 
+                                viewport={{ once: true }} 
+                                transition={{ duration: 0.2, delay: 0.2}}
+                    >
                         <Title size='large' variant='dark' 
                             title='ISO 31000 : 2009'>
                             <span><br/>Tiêu chuẩn quốc tế về quản lý rủi ro</span>
@@ -72,7 +84,7 @@ function LandingPage() {
                             Tiêu chuẩn này đưa ra khung và nguyên tắc giúp doanh nghiệp nhận diện, phân tích, đánh giá, và xử lý rủi ro một cách có hệ thống.
                             Nhờ đó, tổ chức có thể đưa ra quyết định tốt hơn, đảm bảo mục tiêu đạt được trong môi trường an toàn bền vững.
                         </p>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
 

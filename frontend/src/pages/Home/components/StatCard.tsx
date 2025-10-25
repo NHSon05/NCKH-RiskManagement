@@ -2,6 +2,7 @@ import classNames from "classnames";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { motion } from "motion/react"
+import { cardVariants } from "../../../types/CardVariants";
 // import React from "react";
 // import { icon } from "@fortawesome/fontawesome-svg-core";
 
@@ -44,7 +45,10 @@ function StatCard({
 
 
     return (
-        <motion.div className={`p-6 rounded-lg shadow-md flex justify-between items-start ${bgClasses}`} {...props} whileHover={{ scale: 1.05 }} whileTap={{ scale: 1 }}>
+        <motion.div className={`p-6 rounded-lg shadow-md flex justify-between items-start ${bgClasses}`} {...props} 
+                    whileHover={{ scale: 1.05 }} whileTap={{ scale: 1 }}
+                    variants={cardVariants}
+        >
             <div className="text-start">
                 <p className={`text-lg font-semibold ${colorClass}`}>{title}</p>
                 <p className={`text-4xl font-semibold my-1 ${colorClass}`}>{value}</p>

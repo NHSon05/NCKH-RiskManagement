@@ -3,6 +3,7 @@ import classNames from "classnames";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {type IconProp } from '@fortawesome/fontawesome-svg-core';
 import { motion } from "motion/react"
+import { cardVariants } from "../../../types/CardVariants";
 
 interface ItemProps{
     title: string; 
@@ -19,7 +20,6 @@ const Card: React.FC<ItemProps> = ({
     title,
     des,
     className,
-    delay,
     ...passProps
 }) => {
 
@@ -58,11 +58,9 @@ const Card: React.FC<ItemProps> = ({
 
     return(
         <motion.div className={boxClasses} {...props} 
-            whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.8 }}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }} 
-            viewport={{ once: true }} 
-            transition={{ duration: 0.5}}>
+            whileHover={{ scale: 1.05 }}
+            variants={cardVariants}
+        >
             <FontAwesomeIcon icon={icon} className={iconClasses} />
             <h1 className={textClasses}>
                 {title}

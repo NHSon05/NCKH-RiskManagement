@@ -8,6 +8,8 @@ import Button from '../../components/common/Button';
 import Image from '../../components/common/Image';
 import Title from '../../components/common/Title';
 import Card from '../../components/common/PublicComponents/Cards';
+import FadedDiv from '../../components/common/FadedDiv';
+
 
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faChartBar, faStar, faFileAlt } from '@fortawesome/free-solid-svg-icons';
@@ -47,21 +49,16 @@ function LandingPage() {
 
             {/* Advantages of Projects */}
             <div className='py-24 space-y-8'>
-                <motion.div
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }} 
-                    viewport={{ once: true }} 
-                    transition={{ duration: 0.5}}
-                >
+                <div                >
                     <Title title='Risk Management ' variant='dark' size='large'>
                         <span className='text-[var(--main-color)]'>cung cấp</span>
                     </Title>
-                </motion.div>
-                <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[32px]'>
+                </div>
+                <FadedDiv className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[32px]'>
                     {cards.map((card, index) => (
                         <Card key={index} color={card.color} icon={card.icon} title={card.title} des={card.des}/>
                     ))}
-                </div>
+                </FadedDiv>
 
             </div>
 

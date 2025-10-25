@@ -7,7 +7,7 @@ function MainLayout() {
     return (  
         <div>
             <NavBar isLogin={true}/>
-            <div className="wrapper text-center items-center">
+            <div className="wrapper text-center items-center my-8">
                 <Outlet/>
             </div>
             <Footer/>

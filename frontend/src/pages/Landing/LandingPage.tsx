@@ -14,6 +14,7 @@ import FadedDiv from '../../components/common/FadedDiv';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faChartBar, faStar, faFileAlt } from '@fortawesome/free-solid-svg-icons';
 import {motion} from 'motion/react'
+import { type IconProp } from '@fortawesome/fontawesome-svg-core';
 // import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 

@@ -22,7 +22,7 @@ import { type IconProp } from '@fortawesome/fontawesome-svg-core';
 function LandingPage() {
 
     const cards:{ color: 'blue' | 'green' | 'purple' | 'orange'; icon: IconProp; title: string; des: string }[] = [
-        { color: 'blue', icon: faMagnifyingGlass, title: 'Nhận diện rủi ro', des: 'Xác định và phân tích rủi ro tiềm ẩn ảnh hưởng đến doanh nghiệp.', },
+        { color: 'blue', icon: faMagnifyingGlass, title: 'Nhận diện rủi ro', des: 'Xác định và phân tích rủi ro tiềm ẩn ảnh hưởng đến doanh nghiệp.' },
         { color: 'green', icon: faStar, title: 'Đề xuất giải pháp ', des: 'Phát triển các chiến lược hiệu quả để giảm thiểu và quản lý rủi ro.' },
         { color: 'purple', icon: faFileAlt, title: 'Đánh giá & phân tích', des: 'Đánh giá mức độ rủi ro và tác động tiềm tàng của chúng.' },
         { color: 'orange', icon: faChartBar, title: 'Theo dõi & báo cáo', des: 'Liên tục giám sát và báo cáo về tình trạng rủi ro.' },
